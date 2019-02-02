@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleImgEncoder", "SimpleImgEncoder\SimpleImgEncoder.csproj", "{FC8592FD-2FFF-48F5-AA96-C71F54067386}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleImgEncoderTests", "SimpleImgEncoderTests\SimpleImgEncoderTests.csproj", "{AD953381-795F-46DF-B454-DE7EB760BEA0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FC8592FD-2FFF-48F5-AA96-C71F54067386}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC8592FD-2FFF-48F5-AA96-C71F54067386}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC8592FD-2FFF-48F5-AA96-C71F54067386}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC8592FD-2FFF-48F5-AA96-C71F54067386}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD953381-795F-46DF-B454-DE7EB760BEA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD953381-795F-46DF-B454-DE7EB760BEA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD953381-795F-46DF-B454-DE7EB760BEA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD953381-795F-46DF-B454-DE7EB760BEA0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
