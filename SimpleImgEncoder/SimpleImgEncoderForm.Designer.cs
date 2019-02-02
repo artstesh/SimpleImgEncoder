@@ -33,6 +33,7 @@ namespace SimpleImgEncoder
             this.tbText = new System.Windows.Forms.TextBox();
             this.pbImage = new System.Windows.Forms.PictureBox();
             this.btnEncode = new System.Windows.Forms.Button();
+            this.btnDecode = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pbImage)).BeginInit();
             this.SuspendLayout();
             // 
@@ -63,11 +64,22 @@ namespace SimpleImgEncoder
             this.btnEncode.UseVisualStyleBackColor = true;
             this.btnEncode.Click += new System.EventHandler(this.Encode_Click);
             // 
+            // btnDecode
+            // 
+            this.btnDecode.Location = new System.Drawing.Point(156, 248);
+            this.btnDecode.Name = "btnDecode";
+            this.btnDecode.Size = new System.Drawing.Size(93, 23);
+            this.btnDecode.TabIndex = 3;
+            this.btnDecode.Text = "Декодировать";
+            this.btnDecode.UseVisualStyleBackColor = true;
+            this.btnDecode.Click += new System.EventHandler(this.btnDecode_Click);
+            // 
             // SimpleImgEncoderForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(499, 293);
+            this.Controls.Add(this.btnDecode);
             this.Controls.Add(this.btnEncode);
             this.Controls.Add(this.pbImage);
             this.Controls.Add(this.tbText);
@@ -84,5 +96,6 @@ namespace SimpleImgEncoder
         private System.Windows.Forms.TextBox tbText;
         private System.Windows.Forms.PictureBox pbImage;
         private System.Windows.Forms.Button btnEncode;
+        private Button btnDecode;
     }
 }

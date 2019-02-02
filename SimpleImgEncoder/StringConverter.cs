@@ -41,14 +41,10 @@ namespace SimpleImgEncoder
         public List<string> BoolsToString(List<bool> list)
         {
             var result = new List<string>();
-            for (var i = 0; i < list.Count; i++)
+            for (var i = 0; i < list.Count; )
             {
                 var temp = String.Empty;
-                for (int j = 0; j < 8; j++)
-                {
-                    temp += list[i] ? "1" : "0";
-                    i++;
-                }
+                for (int j = 0; j < 8; j++) temp += list[i++] ? "1" : "0";
                 result.Add(temp);
             }
             return result;

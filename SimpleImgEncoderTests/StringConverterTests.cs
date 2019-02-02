@@ -54,14 +54,16 @@ namespace SimpleImgEncoderTests
         [TestCase("10001100", true, false, false, false,true, true, false, false)]
         [TestCase("01100001", false, true, true, false,false, false, false, true)]
         [TestCase("00000111", false, false, false, false,false, true, true, true)]
+        [TestCase("10001100,01100001", true, false, false, false, true, true, false, false, false, true, true, false, false, false, false, true)]
         public void BoolsToString_Success(string expected, params bool[] input)
         {
             var inputList = new List<bool>();
+            var expectedStr = expected.Split(',').ToList();
             inputList.AddRange(input);
             //
             var converter = new StringConverter();
             var result = converter.BoolsToString(inputList);
-            Assert.True(expected == result.First());
+            Assert.True(expectedStr.SequenceEqual(result));
         }
         
         [TestCase("00110000", 48)]

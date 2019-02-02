@@ -6,6 +6,6 @@ namespace SimpleImgEncoder
     public interface IImageConverter
     {
         Bitmap GetImage(List<bool> list);
-        int GetImageSize(int listSize);
+        List<bool> GetInts(Bitmap bitmap);
     }
 }
