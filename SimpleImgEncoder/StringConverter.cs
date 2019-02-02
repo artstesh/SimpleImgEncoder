@@ -30,9 +30,33 @@ namespace SimpleImgEncoder
             return text.ToCharArray().Select(e => (int) e).ToArray();
         }
 
-        public string GetText(List<int> text)
+        public string GetText(List<bool> bools)
         {
-            throw new System.NotImplementedException();
+            var temp = BoolsToString(bools);
+            var chars = BinaryStringToNumber(temp);
+            var result = new string(chars.Select(e => (char) e).ToArray());
+            return result;
+        }
+
+        public List<string> BoolsToString(List<bool> list)
+        {
+            var result = new List<string>();
+            for (var i = 0; i < list.Count; i++)
+            {
+                var temp = String.Empty;
+                for (int j = 0; j < 8; j++)
+                {
+                    temp += list[i] ? "1" : "0";
+                    i++;
+                }
+                result.Add(temp);
+            }
+            return result;
+        }
+        
+        public List<int> BinaryStringToNumber(List<string> binary)
+        {
+            return binary.Select(e => Convert.ToInt32(e, 2)).ToList();
         }
     }
 }

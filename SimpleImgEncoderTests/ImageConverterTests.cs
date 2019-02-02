@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Drawing;
+using System.Linq;
 using NUnit.Framework;
 using ImageConverter = SimpleImgEncoder.ImageConverter;
 
@@ -43,6 +44,66 @@ namespace SimpleImgEncoderTests
             Assert.IsTrue(pixel.B ==  Color.Black.B);
             Assert.IsTrue(pixel.R ==  Color.Black.R);
             Assert.IsTrue(pixel.G ==  Color.Black.G);
+        }
+        
+        [Test]
+        public void GetImage_Success_Orientation()
+        {
+            var list = new List<bool> { true, false, true, false};
+            var converter = new ImageConverter();
+            var result = converter.GetImage(list);
+
+            var pixel00 = result.GetPixel(0,0);
+            var pixel10 = result.GetPixel(1,0);
+            var pixel01 = result.GetPixel(0,1);
+            Assert.IsTrue(pixel00.G ==  Color.Black.G);
+            Assert.IsTrue(pixel10.G ==  Color.White.G);
+            Assert.IsTrue(pixel01.G ==  Color.Black.G);
+        }
+        
+        [Test]
+        public void GetImage_Success_FInal()
+        {
+            var list = new List<bool> { true, false, true};
+            var converter = new ImageConverter();
+            var result = converter.GetImage(list);
+            var pixel = result.GetPixel(1,1);
+            Assert.IsTrue(pixel.G ==  Color.Blue.G);
+        }
+
+        [Test]
+        public void GetImage_Success_Size()
+        {
+            var list = new List<bool> { true, false, true, false };
+            var converter = new ImageConverter();
+            var result = converter.GetImage(list);
+            Assert.IsTrue(result.Size.Height == 2);
+        }
+        
+        [Test]
+        public void GetInts_Success_White()
+        {
+            var list = new List<bool> { false};
+            var map = new Bitmap(1,1);
+            map.SetPixel(0,0,Color.White);
+            //
+            var converter = new ImageConverter();
+            
+            var result = converter.GetInts(map);
+            Assert.IsTrue(result.SequenceEqual(list));
+        }
+        
+        [Test]
+        public void GetInts_Success_Black()
+        {
+            var list = new List<bool> { true};
+            var map = new Bitmap(1,1);
+            map.SetPixel(0,0,Color.Black);
+            //
+            var converter = new ImageConverter();
+            
+            var result = converter.GetInts(map);
+            Assert.IsTrue(result.SequenceEqual(list));
         }
     }
 }
